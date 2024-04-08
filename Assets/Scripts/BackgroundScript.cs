@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
 {
-    float walkSpeed = .01f;
-    float sprintSpeed = .01f;
+    float walkSpeed = .003f;
+    float sprintSpeed = .005f;
+    float speed = 0f;
     bool aDown = false;
     bool dDown = false;
     bool wDown = false;
     bool sDown = false;
+    bool shiftDown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class BackgroundScript : MonoBehaviour
         { 
             sDown = true;
         }
+        if(Input.GetKeyDown("left shift"))
+        { 
+            shiftDown = true;
+        }
         if(Input.GetKeyUp("a"))
         {
             aDown = false;
@@ -55,25 +61,36 @@ public class BackgroundScript : MonoBehaviour
         { 
             sDown = false;
         }
+        if(Input.GetKeyUp("left shift"))
+        { 
+            shiftDown = false;
+        }
+        if(shiftDown)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = walkSpeed;
+        }
         if(wDown)
         {
-            ypos -= walkSpeed;
+            ypos -= speed;
         }
         if(aDown)
         {
-            xpos += walkSpeed;
+            xpos += speed;
         }
         if(sDown)
         {
-            ypos += walkSpeed;
+            ypos += speed;
         }
         if(dDown)
         {
-            xpos -= walkSpeed;   
+            xpos -= speed;   
         }
         backgroundPos.x = xpos;
         backgroundPos.y = ypos;
         this.transform.position = backgroundPos;
-        Debug.Log(xpos);
     }
 }
