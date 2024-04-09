@@ -22,80 +22,77 @@ public class BackgroundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xpos = this.gameObject.GetComponent<Rigidbody2D>().position.x;
-        float ypos = this.gameObject.GetComponent<Rigidbody2D>().position.y;
-        Vector3 backgroundPos = new Vector3(0.5f, 0.5f, 15.5f);
+        if(Time.timeScale == 1)
+        {
+            float xpos = this.gameObject.GetComponent<Rigidbody2D>().position.x;
+            float ypos = this.gameObject.GetComponent<Rigidbody2D>().position.y;
+            Vector3 backgroundPos = new Vector3(0.5f, 0.5f, 15.5f);
 
-        if(Input.GetKeyDown("a"))
-        {
-            aDown = true;
+            if(Input.GetKeyDown("a"))
+            {
+                aDown = true;
+            }
+            if(Input.GetKeyDown("d"))
+            { 
+                dDown = true;
+            }
+            if(Input.GetKeyDown("w"))
+            {
+                wDown = true;
+            }
+            if(Input.GetKeyDown("s"))
+            { 
+                sDown = true;
+            }
+            if(Input.GetKeyDown("left shift"))
+            { 
+                shiftDown = true;
+            }
+            if(Input.GetKeyUp("a"))
+            {
+                aDown = false;
+            }
+            if(Input.GetKeyUp("d"))
+            { 
+                dDown = false;
+            }
+            if(Input.GetKeyUp("w"))
+            {
+                wDown = false;
+            }
+            if(Input.GetKeyUp("s"))
+            { 
+                sDown = false;
+            }
+            if(Input.GetKeyUp("left shift"))
+            { 
+                shiftDown = false;
+            }
+            if(shiftDown)
+            {
+                speed = sprintSpeed;
+            }
+            else
+            {
+                speed = walkSpeed;
+            }
+            if(wDown)
+            {
+                body.AddForce(new Vector2(0, -1*speed), ForceMode2D.Force);
+            }
+            if(aDown)
+            {
+                body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
+            }
+            if(sDown)
+            {
+                body.AddForce(new Vector2(0, speed), ForceMode2D.Force);
+            }
+            if(dDown)
+            {
+                body.AddForce(new Vector2(-1*speed, 0), ForceMode2D.Force);
+            }
         }
-        if(Input.GetKeyDown("d"))
-        { 
-            dDown = true;
-        }
-        if(Input.GetKeyDown("w"))
-        {
-            wDown = true;
-        }
-        if(Input.GetKeyDown("s"))
-        { 
-            sDown = true;
-        }
-        if(Input.GetKeyDown("left shift"))
-        { 
-            shiftDown = true;
-        }
-        if(Input.GetKeyUp("a"))
-        {
-            aDown = false;
-        }
-        if(Input.GetKeyUp("d"))
-        { 
-            dDown = false;
-        }
-        if(Input.GetKeyUp("w"))
-        {
-            wDown = false;
-        }
-        if(Input.GetKeyUp("s"))
-        { 
-            sDown = false;
-        }
-        if(Input.GetKeyUp("left shift"))
-        { 
-            shiftDown = false;
-        }
-        if(shiftDown)
-        {
-            speed = sprintSpeed;
-        }
-        else
-        {
-            speed = walkSpeed;
-        }
-        if(wDown)
-        {
-            body.AddForce(new Vector2(0, -1*speed), ForceMode2D.Force);
-            ypos -= speed;
-        }
-        if(aDown)
-        {
-            body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
-            xpos += speed;
-        }
-        if(sDown)
-        {
-            body.AddForce(new Vector2(0, speed), ForceMode2D.Force);
-            ypos += speed;
-        }
-        if(dDown)
-        {
-            body.AddForce(new Vector2(-1*speed, 0), ForceMode2D.Force);
-            xpos -= speed;   
-        }
-        //backgroundPos.x = xpos;
-        //backgroundPos.y = ypos;
-        //this.transform.position = backgroundPos;
+        
     }
 }
