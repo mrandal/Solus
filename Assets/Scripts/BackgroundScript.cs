@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
 {
-    float walkSpeed = .003f;
-    float sprintSpeed = .005f;
-    float speed = 0f;
-    bool aDown = false;
-    bool dDown = false;
-    bool wDown = false;
-    bool sDown = false;
-    bool shiftDown = false;
+    private float walkSpeed = 3f; //.003f
+    private float sprintSpeed = 6f; //.005f;
+    private float speed = 0f;
+    private bool aDown = false;
+    private bool dDown = false;
+    private bool wDown = false;
+    private bool sDown = false;
+    private bool shiftDown = false;
+    private Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
     {
-        
+        body = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -75,22 +76,26 @@ public class BackgroundScript : MonoBehaviour
         }
         if(wDown)
         {
+            body.AddForce(new Vector2(0, -1*speed), ForceMode2D.Force);
             ypos -= speed;
         }
         if(aDown)
         {
+            body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
             xpos += speed;
         }
         if(sDown)
         {
+            body.AddForce(new Vector2(0, speed), ForceMode2D.Force);
             ypos += speed;
         }
         if(dDown)
         {
+            body.AddForce(new Vector2(-1*speed, 0), ForceMode2D.Force);
             xpos -= speed;   
         }
-        backgroundPos.x = xpos;
-        backgroundPos.y = ypos;
-        this.transform.position = backgroundPos;
+        //backgroundPos.x = xpos;
+        //backgroundPos.y = ypos;
+        //this.transform.position = backgroundPos;
     }
 }
