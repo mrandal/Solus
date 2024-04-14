@@ -78,19 +78,19 @@ public class BackgroundScript : MonoBehaviour
             }
             if(wDown)
             {
-                body.AddForce(new Vector2(0, -1*speed), ForceMode2D.Force);
+                body.AddForce(new Vector2(0, speed), ForceMode2D.Force);
             }
             if(aDown)
             {
-                body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
+                body.AddForce(new Vector2(-1*speed, 0), ForceMode2D.Force);
             }
             if(sDown)
             {
-                body.AddForce(new Vector2(0, speed), ForceMode2D.Force);
+                body.AddForce(new Vector2(0, -1*speed), ForceMode2D.Force);
             }
             if(dDown)
             {
-                body.AddForce(new Vector2(-1*speed, 0), ForceMode2D.Force);
+                body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
             }
         }
         
