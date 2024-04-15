@@ -93,6 +93,7 @@ public class BackgroundScript : MonoBehaviour
                 body.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
             }
         }
+        body.angularVelocity = 0;
         
     }
 }
