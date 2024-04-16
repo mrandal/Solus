@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkSpeed: 1000
-  _sprintSpeed: 1400
+  _sprintSpeed: 1800
   _rb: {fileID: 1469955390}
 --- !u!50 &1469955390
 Rigidbody2D:
