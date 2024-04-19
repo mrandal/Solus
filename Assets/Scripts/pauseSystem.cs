@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class pauseSystem : MonoBehaviour
 {
-    bool paused = false;
-    public Button pauseButton;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,16 +20,13 @@ public class pauseSystem : MonoBehaviour
     
     public void PauseGame()
     {
-        Debug.Log("PAUse button0");
-        if(paused)
-        {
-            paused = false;
-            Time.timeScale = 1;
-        }
-        else
-        {
-            paused = true;
-            Time.timeScale = 0;
-        }
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void PlayGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 }
