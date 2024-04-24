@@ -23,7 +23,7 @@ public class FlashlightBehavior : MonoBehaviour
     {
         Destroy(gameObject);
         playerLight.pointLightOuterRadius = 3.5f;
-        flashlightObject.GetComponent<Dialogue.cs>().enabled = true;
+        flashlightObject.GetComponent<Dialogue>().enabled = true;
         // give flashlight light
     }
 }

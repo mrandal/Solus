@@ -53,6 +53,9 @@ TagManager:
   - name: Object Top
     uniqueID: 1357135003
     locked: 0
+  - name: Dialogue
+    uniqueID: 3447542205
+    locked: 0
   - name: UI
     uniqueID: 2582532495
     locked: 0

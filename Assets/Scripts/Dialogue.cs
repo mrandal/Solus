@@ -5,9 +5,10 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public GameObject dialogueBox;
     public string[] lines;
     public float textSpeed;
-
+    //private bool ran = false;
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class Dialogue : MonoBehaviour
 
     void StartDialogue()
     {
+        dialogueBox.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -58,7 +60,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            dialogueBox.SetActive(false);
         }
     }
 }
