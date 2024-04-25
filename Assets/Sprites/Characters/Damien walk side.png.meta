@@ -97,12 +97,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -126,10 +126,10 @@ TextureImporter:
       name: Damien walk side_0
       rect:
         serializedVersion: 2
-        x: 176
-        y: 235
-        width: 118
-        height: 185
+        x: 183
+        y: 239
+        width: 111
+        height: 176
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Damien walk side_1
       rect:
         serializedVersion: 2
-        x: 296
-        y: 235
-        width: 84
-        height: 194
+        x: 297
+        y: 238
+        width: 81
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Damien walk side_2
       rect:
         serializedVersion: 2
-        x: 404
+        x: 407
         y: 237
-        width: 115
-        height: 185
+        width: 111
+        height: 175
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

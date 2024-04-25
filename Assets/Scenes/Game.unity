@@ -3104,6 +3104,7 @@ GameObject:
   - component: {fileID: 1469955390}
   - component: {fileID: 1469955389}
   - component: {fileID: 1469955391}
+  - component: {fileID: 1469955392}
   m_Layer: 0
   m_Name: Damien
   m_TagString: Untagged
@@ -3157,7 +3158,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.66, y: 2.57}
+  m_Size: {x: 0.8, y: 1.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3261,6 +3262,27 @@ CircleCollider2D:
   m_Offset: {x: -0.065569974, y: -0.30360842}
   serializedVersion: 2
   m_Radius: 0.27107733
+--- !u!95 &1469955392
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469955386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69ea4f7859fd1415d88c16d1a5d1d0ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1515016906
 GameObject:
   m_ObjectHideFlags: 0

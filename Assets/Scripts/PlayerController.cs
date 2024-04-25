@@ -11,6 +11,7 @@ public class BackgroundScript : MonoBehaviour
     [SerializeField] float _sprintSpeed = 6f;
     [SerializeField] Rigidbody2D _rb;
     public Image StaminaBar;
+    Animator animator;
     public float Stamina, MaxStamina;
     public float RunCost;
     public float StaminaRegen;
@@ -22,6 +23,10 @@ public class BackgroundScript : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     #endregion
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     #region Tick
     private void Update()
     {
@@ -68,6 +73,35 @@ public class BackgroundScript : MonoBehaviour
         {
             _rb.AddForce(_moveDir * _walkSpeed * Time.fixedDeltaTime);
         }
+        //animate
+        // Directions: 0 = no movement, 1 = left, 2 = up, 3 = right, 4 = down
+        if(Mathf.Abs(_moveDir.x) > 0 && Mathf.Abs(_moveDir.x) >= Mathf.Abs(_moveDir.y))
+        {
+            if(_moveDir.x > 0)
+            {
+                animator.SetInteger("walkDirection", 3);
+            }
+            else
+            {
+                animator.SetInteger("walkDirection",1);
+            }
+        }
+        else if(Mathf.Abs(_moveDir.y)> 0)
+        {
+            if(_moveDir.y > 0)
+            {
+                animator.SetInteger("walkDirection", 2);
+            }
+            else
+            {
+                animator.SetInteger("walkDirection", 4);
+            }
+        }
+        else
+        {
+            animator.SetInteger("walkDirection",0);
+        }
+        
     }
     
     private IEnumerator RechargeStamina()
