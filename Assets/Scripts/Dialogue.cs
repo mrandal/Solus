@@ -7,12 +7,19 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public GameObject dialogueBox;
     public string[] lines;
+    public GameObject[] dialogueObjects;
     public float textSpeed;
     //private bool ran = false;
     private int index;
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < dialogueObjects.Length; i++)
+        {
+            print(dialogueObjects[i]);
+            dialogueObjects[i].GetComponent<Dialogue>().KillDialogue();
+            dialogueObjects[i].GetComponent<Dialogue>().enabled = false;
+        }
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -41,6 +48,14 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
+    public void KillDialogue()
+    {
+        print("killed");
+        StopAllCoroutines();
+        this.lines = null;
+        
+    }
+
     IEnumerator TypeLine()
     {
         foreach(char c in lines[index].ToCharArray())
@@ -52,7 +67,7 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
-        if(index < lines.Length - 1)
+        if(index < lines.Length - 1 && lines != null)
         {
             index ++;
             textComponent.text = string.Empty;

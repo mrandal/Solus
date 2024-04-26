@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c9852c45b7074d349ca2fceb05d86e8
+guid: 9f14bf07d25c541ae981a5f0f1370e87
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,10 +46,10 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5962472, y: 0.5209285}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 349, y: 218, z: 221, w: 159}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire parts_1
+      name: Damien walk side flip _0
       rect:
         serializedVersion: 2
-        x: 354
-        y: 221
-        width: 52
-        height: 69
+        x: 122
+        y: 236
+        width: 111
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d4042626432a422ab16255204152d06
-      internalID: -943463907
+      spriteID: f91701091bba747649bf48b923937cce
+      internalID: 1610271588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fire parts_4
+      name: Damien walk side flip _1
       rect:
         serializedVersion: 2
-        x: 222
-        y: 205
-        width: 66
-        height: 37
+        x: 262
+        y: 238
+        width: 81
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bab3ecfc46d984206bafee36cd6cbb04
-      internalID: -683789319
+      spriteID: e273310dd9d2f49b195d73cdfafc4302
+      internalID: 485238377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damien walk side flip _2
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 239
+        width: 111
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d0059a789664121a26b4a8d0a9ca6c
+      internalID: 1769329214
       vertices: []
       indices: 
       edges: []
@@ -168,18 +189,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fire parts_0: -2052492880
-      Fire parts_1: -943463907
-      Fire parts_2: -1954827500
-      Fire parts_3: 991880420
-      Fire parts_4: -683789319
+      Damien walk side flip _0: 1610271588
+      Damien walk side flip _1: 485238377
+      Damien walk side flip _2: 1769329214
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
