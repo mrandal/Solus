@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightFlicker : MonoBehaviour
 {
-    public UnityEngine.Rendering.Universal.Light2D light;
+    public new UnityEngine.Rendering.Universal.Light2D light;
     public float oscillationSpeed;
     public float oscillationWidth;
     private float t = 0;

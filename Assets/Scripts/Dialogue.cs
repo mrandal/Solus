@@ -16,7 +16,6 @@ public class Dialogue : MonoBehaviour
     {
         for(int i = 0; i < dialogueObjects.Length; i++)
         {
-            print(dialogueObjects[i]);
             dialogueObjects[i].GetComponent<Dialogue>().KillDialogue();
             dialogueObjects[i].GetComponent<Dialogue>().enabled = false;
         }
@@ -50,7 +49,6 @@ public class Dialogue : MonoBehaviour
 
     public void KillDialogue()
     {
-        print("killed");
         StopAllCoroutines();
         this.lines = null;
         
