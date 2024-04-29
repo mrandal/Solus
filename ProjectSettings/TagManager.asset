@@ -59,6 +59,9 @@ TagManager:
   - name: UI
     uniqueID: 2582532495
     locked: 0
+  - name: Map
+    uniqueID: 2453515745
+    locked: 0
   - name: Jumpscare
     uniqueID: 2558006213
     locked: 0
