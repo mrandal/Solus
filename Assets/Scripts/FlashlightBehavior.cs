@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FlashlightBehavior : MonoBehaviour
 {
+    public Collider2D damien;
     public Collider2D flashlight;
     public UnityEngine.Rendering.Universal.Light2D playerLight;
     public GameObject flashlightObject;
@@ -21,9 +22,13 @@ public class FlashlightBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
-        playerLight.pointLightOuterRadius = 3.5f;
-        flashlightObject.GetComponent<Dialogue>().enabled = true;
-        // give flashlight light
+        if(other == damien)
+        {
+            Destroy(gameObject);
+            playerLight.pointLightOuterRadius = 3.5f;
+            flashlightObject.GetComponent<Dialogue>().enabled = true;
+            // give flashlight light
+        }
+        
     }
 }
