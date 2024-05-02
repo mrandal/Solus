@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HideCabinRoof : MonoBehaviour
+public class ShowCabinRoof : MonoBehaviour
 {
     public GameObject roof;
+    public Collider2D damien;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,9 @@ public class HideCabinRoof : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        roof.SetActive(false);
+        if(other == damien)
+        {
+            roof.SetActive(true);
+        }
     }
 }

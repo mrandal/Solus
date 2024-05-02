@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class mapBehavior : MonoBehaviour
 {
-    public Collider2D map;
     public GameObject gameObject;
-    public GameObject mapObject;
+    public Collider2D damien;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,10 @@ public class mapBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        gameObject.SetActive(false);
+        if(other == damien)
+        {
+            gameObject.SetActive(false);
+        }
         //add section to map
     }
 }

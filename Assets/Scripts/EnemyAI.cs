@@ -9,7 +9,8 @@ public class EnemyAI : MonoBehaviour
     [Header("Movement Attributes")]
     [SerializeField] float _walkSpeed = 3f;
     [SerializeField] Rigidbody2D _rb;
-    [SerializeField] Rigidbody2D damien;
+    [SerializeField] Rigidbody2D damienRB;
+    [SerializeField] GameObject damien;
     [SerializeField] string menuScene;
     //Animator animator;
     #endregion
@@ -39,8 +40,7 @@ public class EnemyAI : MonoBehaviour
     private void GatherInput()
     {
         
-        _moveDir = damien.GetRelativePoint(zeroPoint)-_rb.GetRelativePoint(zeroPoint);
-        print(_moveDir);
+        _moveDir = damienRB.GetRelativePoint(zeroPoint)-_rb.GetRelativePoint(zeroPoint);
     }
     #endregion
 
@@ -83,7 +83,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == damien)
+        if(other == damien.GetComponent<Collider2D>())
         {
             SceneManager.LoadScene(menuScene);
         }
