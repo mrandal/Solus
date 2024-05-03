@@ -9,6 +9,7 @@ public class FlashlightBehavior : MonoBehaviour
     public Collider2D flashlight;
     public UnityEngine.Rendering.Universal.Light2D playerLight;
     public GameObject flashlightObject;
+    public GameObject flashlightInv;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class FlashlightBehavior : MonoBehaviour
             Destroy(gameObject);
             playerLight.pointLightOuterRadius = 3.5f;
             flashlightObject.GetComponent<Dialogue>().enabled = true;
+            flashlightInv.SetActive(true);
             // give flashlight light
         }
         

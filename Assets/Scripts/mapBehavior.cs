@@ -6,6 +6,8 @@ public class mapBehavior : MonoBehaviour
 {
     public GameObject gameObject;
     public Collider2D damien;
+    public bool sword;
+    public GameObject swordInv;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,10 @@ public class mapBehavior : MonoBehaviour
         if(other == damien)
         {
             gameObject.SetActive(false);
+        }
+        if(sword)
+        {
+            swordInv.SetActive(true);
         }
         //add section to map
     }
