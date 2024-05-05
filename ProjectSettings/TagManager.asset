@@ -56,8 +56,14 @@ TagManager:
   - name: Dialogue
     uniqueID: 3447542205
     locked: 0
-  - name: UI
+  - name: UI1
     uniqueID: 2582532495
+    locked: 0
+  - name: UI2
+    uniqueID: 846351407
+    locked: 0
+  - name: UI3
+    uniqueID: 1691720441
     locked: 0
   - name: Map
     uniqueID: 2453515745
