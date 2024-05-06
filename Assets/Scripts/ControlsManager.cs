@@ -5,11 +5,10 @@ using UnityEngine;
 public class ControlsManager : MonoBehaviour
 {
     public GameObject Controls;
-    private bool on = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Controls.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,15 +19,13 @@ public class ControlsManager : MonoBehaviour
 
     public void showControls()
     {
-        if(!on)
+        if(!Controls.activeSelf)
         {
             Controls.SetActive(true);
-            on = true;
         }
         else
         {
             Controls.SetActive(false);
-            on = false;
         }
     }
 }

@@ -11,8 +11,8 @@ public class MapSystem : MonoBehaviour
     public GameObject map1Object;
     public GameObject map2Object;
     public GameObject map3Object;
-    private bool on = false;
-
+    public AudioSource sound;
+    private bool justDown = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +36,16 @@ public class MapSystem : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.Tab))
         {
+            if(!sound.isPlaying && justDown)
+            {
+                sound.Play();
+                justDown = false;
+            }
             map.SetActive(true);
         }
         else
         {
+            justDown = true;
             map.SetActive(false);
         }
     }

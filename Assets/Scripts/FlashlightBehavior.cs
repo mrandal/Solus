@@ -10,6 +10,7 @@ public class FlashlightBehavior : MonoBehaviour
     public UnityEngine.Rendering.Universal.Light2D playerLight;
     public GameObject flashlightObject;
     public GameObject flashlightInv;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class FlashlightBehavior : MonoBehaviour
     {
         if(other == damien)
         {
+            sound.Play();
             Destroy(gameObject);
             playerLight.pointLightOuterRadius = 3.5f;
             flashlightObject.GetComponent<Dialogue>().enabled = true;

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float Stamina, MaxStamina;
     public float RunCost;
     public float StaminaRegen;
+    public AudioSource walkSound;
     private Coroutine recharge;
 
     #endregion
@@ -31,6 +32,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         GatherInput();
+        if(_moveDir != Vector2.zero && Time.timeScale == 1)
+        {
+            if(!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else
+        {
+            walkSound.Pause();
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +62,7 @@ public class PlayerController : MonoBehaviour
     private void MovementUpdate()
     {
         _moveDir.Normalize();
+        
         if(Input.GetKey(KeyCode.LeftShift) && Stamina > 0)
         {
             _rb.AddForce(_moveDir * _sprintSpeed * Time.fixedDeltaTime);
