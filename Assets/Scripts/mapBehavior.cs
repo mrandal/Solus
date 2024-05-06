@@ -7,7 +7,9 @@ public class mapBehavior : MonoBehaviour
     public GameObject gameObj;
     public Collider2D damien;
     public bool sword;
+    public bool dialogue;
     public GameObject swordInv;
+    public GameObject dialogueObj;
     public AudioSource sound;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,10 @@ public class mapBehavior : MonoBehaviour
         {
             sound.Play();
             gameObj.SetActive(false);
+            if(dialogue)
+            {
+                dialogueObj.GetComponent<Dialogue>().enabled = true;
+            }
             if(sword)
             {
                 swordInv.SetActive(true);
