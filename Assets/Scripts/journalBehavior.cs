@@ -7,7 +7,7 @@ public class journalBehavior : MonoBehaviour
     public Collider2D damien;
     public GameObject journalObj;
     public GameObject journal;
-    public GameObject[] pages;
+    public GameObject[] pages = {};
     public AudioSource journalSound;
     // Start is called before the first frame update
     void Start()
@@ -29,10 +29,9 @@ public class journalBehavior : MonoBehaviour
             journalObj.SetActive(false);
             Time.timeScale = 0;
             journal.SetActive(true);
-            pages[0].SetActive(true);
-            if(pages[1] != null)
+            for(int i = 0; i < pages.Length; i++)
             {
-                pages[1].SetActive(true);
+                pages[i].SetActive(true);
             }
         }
         
