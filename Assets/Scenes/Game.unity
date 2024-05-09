@@ -12558,6 +12558,7 @@ MonoBehaviour:
   swordCost: 20
   StaminaRegen: 5
   walkSound: {fileID: 1945288080}
+  swordSound: {fileID: 854883685}
   sword: {fileID: 879492405}
 --- !u!50 &1469955390
 Rigidbody2D:

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float swordCost;
     public float StaminaRegen;
     public AudioSource walkSound;
+    public AudioSource swordSound;
     private Coroutine recharge;
     public GameObject sword;
 
@@ -61,12 +62,13 @@ public class PlayerController : MonoBehaviour
     {
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
-        if(sword.activeSelf && timeUntilMelee <= 0f && Input.GetMouseButtonDown(0) && Stamina-swordCost >= 0)
+        if(sword.activeSelf && timeUntilMelee <= 0f && Input.GetMouseButtonDown(0) && Stamina-swordCost >= 0 && Time.timeScale != 0)
         {
             anim.SetTrigger("Attack");
             timeUntilMelee = meleeSpeed;
             Stamina -= swordCost;
             StaminaBar.fillAmount = Stamina / MaxStamina;
+            swordSound.Play();
             if(recharge != null)
             {
                 StopCoroutine(recharge);
