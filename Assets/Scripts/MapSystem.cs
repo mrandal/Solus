@@ -12,6 +12,7 @@ public class MapSystem : MonoBehaviour
     public GameObject map2Object;
     public GameObject map3Object;
     public AudioSource sound;
+    bool map3On = false;
     private bool justDown = true;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class MapSystem : MonoBehaviour
         {
             map2.SetActive(true);
         }
-        if(map3Object.activeSelf == false)
+        if(map3On && map3Object.activeSelf == false)
         {
             map3.SetActive(true);
         }
@@ -47,6 +48,10 @@ public class MapSystem : MonoBehaviour
         {
             justDown = true;
             map.SetActive(false);
+        }
+        if(map3Object.activeSelf == true)
+        {
+            map3On = true;
         }
     }
 }

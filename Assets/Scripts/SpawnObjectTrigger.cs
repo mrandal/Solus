@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObjectTrigger : MonoBehaviour
 {
-    public GameObject spawnObject;
+    public GameObject[] spawnObjects;
     public Collider2D damien;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,10 @@ public class SpawnObjectTrigger : MonoBehaviour
     {
         if(other == damien)
         {
-            spawnObject.SetActive(true);
+            foreach(GameObject spawnObject in spawnObjects)
+            {
+                spawnObject.SetActive(true);
+            }
         }
     }
 }

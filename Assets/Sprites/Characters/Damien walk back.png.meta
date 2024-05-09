@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,20 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,12 +84,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -137,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 325cf6f0842bb46e5ab58d2f61fbc5f0
-      internalID: -1225116488
+      spriteID: 6c773e928fe0a00478de19a1f131babb
+      internalID: 1424101690
       vertices: []
       indices: 
       edges: []
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f518115e02514bd787ddf4ab78868f0
-      internalID: 1012204336
+      spriteID: 984afb7f041cea84c83069c9d1e8a4ee
+      internalID: 405600004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Damien walk back_3
+      name: Damien walk back_2
       rect:
         serializedVersion: 2
         x: 342
@@ -179,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5948fd528ed9d443daf94032b3517edc
-      internalID: -1975435053
+      spriteID: e372972697e8f994d898d1a5530e5950
+      internalID: -722599565
       vertices: []
       indices: 
       edges: []
@@ -196,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Damien walk back_0: -1225116488
-      Damien walk back_1: 1012204336
-      Damien walk back_2: -121838537
-      Damien walk back_3: -1975435053
+      Damien walk back_0: 1424101690
+      Damien walk back_1: 405600004
+      Damien walk back_2: -722599565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

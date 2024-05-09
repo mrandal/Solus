@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisableObject : MonoBehaviour
 {
-    public GameObject disabledObject;
+    public GameObject[] disabledObjects;
     public Collider2D damien;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,10 @@ public class DisableObject : MonoBehaviour
     {
         if(other == damien)
         {
-            disabledObject.SetActive(false);
+            foreach(GameObject disabledObject in disabledObjects)
+            {
+                disabledObject.SetActive(false);
+            }
         }
     }
 }

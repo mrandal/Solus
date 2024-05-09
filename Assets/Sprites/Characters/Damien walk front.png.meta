@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,20 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,12 +84,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -131,14 +118,14 @@ TextureImporter:
         width: 80
         height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4afb2b036d2fe4987b36bea74f6a6a5e
-      internalID: 606165565
+      spriteID: c09f45fdc8eb4764ebb9bbdd0836170a
+      internalID: -1582126314
       vertices: []
       indices: 
       edges: []
@@ -152,14 +139,14 @@ TextureImporter:
         width: 78
         height: 187
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cd8444bcf90e43e8b92fa25bb6588d6
-      internalID: 468594560
+      spriteID: be3db874cb3ff7142a90a3f6fb633f99
+      internalID: -608789586
       vertices: []
       indices: 
       edges: []
@@ -173,14 +160,14 @@ TextureImporter:
         width: 82
         height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3615e44078e4e9cb0affe68c474883
-      internalID: 278609479
+      spriteID: 6d9c17a2ebf992c438e87c360250edcc
+      internalID: -864965721
       vertices: []
       indices: 
       edges: []
@@ -196,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Damien walk front_0: 606165565
-      Damien walk front_1: 468594560
-      Damien walk front_2: 278609479
+      Damien walk front_0: -1582126314
+      Damien walk front_1: -608789586
+      Damien walk front_2: -864965721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

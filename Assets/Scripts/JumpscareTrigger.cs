@@ -45,7 +45,7 @@ public class JumpscareTrigger : MonoBehaviour
         jumpscare.SetActive(false);
         Time.timeScale = 1;
         if(cultMember)
-        {
+        {   
             SceneManager.LoadScene(menuScene);
         }
     }
