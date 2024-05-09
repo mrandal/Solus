@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 44765482}
   - component: {fileID: 44765486}
   - component: {fileID: 44765487}
+  - component: {fileID: 44765488}
   m_Layer: 0
   m_Name: Keys
   m_TagString: Untagged
@@ -805,6 +806,20 @@ MonoBehaviour:
   player: {fileID: 392537707}
   following: {fileID: 44765480}
   sword: 0
+--- !u!114 &44765488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44765480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf6dfe612537423d99af5dc17fbe965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damien: {fileID: 1469955391}
+  dialogueObj: {fileID: 1932993274}
 --- !u!1 &53376651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,7 +3386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &392811263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4086,6 +4101,7 @@ GameObject:
   - component: {fileID: 462151911}
   - component: {fileID: 462151913}
   - component: {fileID: 462151912}
+  - component: {fileID: 462151914}
   m_Layer: 0
   m_Name: KillFirstEncounter
   m_TagString: Untagged
@@ -4167,6 +4183,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 90.73805, y: 0.42964554}
   m_EdgeRadius: 0
+--- !u!114 &462151914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462151910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2182cb108b249c19610c5ad103cd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledObjects:
+  - {fileID: 367266219}
+  damien: {fileID: 1469955391}
 --- !u!1 &466013574
 GameObject:
   m_ObjectHideFlags: 0
@@ -12038,8 +12069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf6dfe612537423d99af5dc17fbe965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damien: {fileID: 0}
-  dialogueObj: {fileID: 0}
+  damien: {fileID: 1469955391}
+  dialogueObj: {fileID: 657230402}
 --- !u!1 &1396046451
 GameObject:
   m_ObjectHideFlags: 0
