@@ -18,7 +18,7 @@ public class EnemySword : MonoBehaviour
         if(health <= 0f)
         {
             //dead
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             if(drop)
             {
                 spawn.SetActive(true);

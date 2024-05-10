@@ -14,9 +14,10 @@ public class MapSystem : MonoBehaviour
     public AudioSource sound;
     public GameObject nataliaDeadDialogue;
     public GameObject charlesDeadDialogue;
+    public GameObject natalia;
+    public GameObject charles;
     private bool spawned = false;
     public GameObject bothDeadDialogue;
-    public AudioSource CarDriveSound;
     bool map3On = false;
     private bool justDown = true;
     // Start is called before the first frame update
@@ -57,6 +58,29 @@ public class MapSystem : MonoBehaviour
         if(map3Object.activeSelf == true)
         {
             map3On = true;
+        }
+
+        if(!spawned)
+        {
+            if(charles.activeSelf)
+            {
+                spawned = true;
+            }
+        }
+        if(spawned)
+        {
+            if(charles.activeSelf==true && natalia.activeSelf==false)
+            {
+                nataliaDeadDialogue.GetComponent<Dialogue>().enabled = true;
+            }
+            if(natalia.activeSelf==true && charles.activeSelf==false)
+            {
+                charlesDeadDialogue.GetComponent<Dialogue>().enabled = true;
+            }
+            if(charles.activeSelf==false && natalia.activeSelf==false)
+            {
+                bothDeadDialogue.GetComponent<Dialogue>().enabled = true;
+            }
         }
     }
 }
