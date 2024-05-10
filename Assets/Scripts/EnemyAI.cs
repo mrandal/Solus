@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -10,9 +9,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float _walkSpeed = 3f;
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] Rigidbody2D damienRB;
-    [SerializeField] GameObject damien;
-    [SerializeField] string menuScene;
-    //Animator animator;
+    public AudioSource walkSound;
+    public float maxSoundDist;
+    Animator animator;
     #endregion
 
     #region Internal Data
@@ -22,12 +21,23 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     #region Tick
     private void Update()
     {
         GatherInput();
+        if(_moveDir != Vector2.zero && Time.timeScale == 1)
+        {
+            if(!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else
+        {
+            walkSound.Pause();
+        }
     }
 
     private void FixedUpdate()
@@ -41,6 +51,14 @@ public class EnemyAI : MonoBehaviour
     {
         
         _moveDir = damienRB.GetRelativePoint(zeroPoint)-_rb.GetRelativePoint(zeroPoint);
+        if(_moveDir.magnitude > maxSoundDist)
+        {
+            walkSound.volume = 0;
+        }
+        else
+        {
+            walkSound.volume = 1 - (_moveDir.magnitude / maxSoundDist);
+        }
     }
     #endregion
 
@@ -51,7 +69,7 @@ public class EnemyAI : MonoBehaviour
 
         //animate
         // Directions: 0 = no movement, 1 = left, 2 = up, 3 = right, 4 = down
-        /*
+        
         if(Mathf.Abs(_moveDir.x) > 0 && Mathf.Abs(_moveDir.x) >= Mathf.Abs(_moveDir.y))
         {
             if(_moveDir.x > 0)
@@ -78,14 +96,6 @@ public class EnemyAI : MonoBehaviour
         {
             animator.SetInteger("walkDirection",0);
         }
-        */
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other == damien.GetComponent<Collider2D>())
-        {
-            SceneManager.LoadScene(menuScene);
-        }
+        
     }
 }

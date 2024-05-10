@@ -10,12 +10,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _walkSpeed = 3f;
     [SerializeField] float _sprintSpeed = 6f;
     [SerializeField] Rigidbody2D _rb;
+    [SerializeField] private Animator anim;
+    [SerializeField] private float meleeSpeed;
+    float timeUntilMelee;
     public Image StaminaBar;
-    Animator animator;
+    public Animator animator;
     public float Stamina, MaxStamina;
     public float RunCost;
+    public float swordCost;
     public float StaminaRegen;
+    public AudioSource walkSound;
+    public AudioSource swordSound;
     private Coroutine recharge;
+    public GameObject sword;
 
     #endregion
 
@@ -25,12 +32,23 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+
     }
     #region Tick
     private void Update()
     {
         GatherInput();
+        if(_moveDir != Vector2.zero && Time.timeScale == 1)
+        {
+            if(!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else
+        {
+            walkSound.Pause();
+        }
     }
 
     private void FixedUpdate()
@@ -44,12 +62,32 @@ public class PlayerController : MonoBehaviour
     {
         _moveDir.x = Input.GetAxisRaw("Horizontal");
         _moveDir.y = Input.GetAxisRaw("Vertical");
+        if(sword.activeSelf && timeUntilMelee <= 0f && Input.GetMouseButtonDown(0) && Stamina-swordCost >= 0 && Time.timeScale != 0)
+        {
+            anim.SetTrigger("Attack");
+            timeUntilMelee = meleeSpeed;
+            Stamina -= swordCost;
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+            swordSound.Play();
+            if(recharge != null)
+            {
+                StopCoroutine(recharge);
+            }
+            recharge = StartCoroutine(RechargeStamina());
+        }
+        else
+        {
+            timeUntilMelee -= Time.deltaTime;
+        }
+        
+        
     }
     #endregion
 
     private void MovementUpdate()
     {
         _moveDir.Normalize();
+        
         if(Input.GetKey(KeyCode.LeftShift) && Stamina > 0)
         {
             _rb.AddForce(_moveDir * _sprintSpeed * Time.fixedDeltaTime);
@@ -73,6 +111,8 @@ public class PlayerController : MonoBehaviour
         {
             _rb.AddForce(_moveDir * _walkSpeed * Time.fixedDeltaTime);
         }
+
+        
         //animate
         // Directions: 0 = no movement, 1 = left, 2 = up, 3 = right, 4 = down
         if(Mathf.Abs(_moveDir.x) > 0 && Mathf.Abs(_moveDir.x) >= Mathf.Abs(_moveDir.y))

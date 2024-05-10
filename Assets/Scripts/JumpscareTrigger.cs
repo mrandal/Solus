@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JumpscareTrigger : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class JumpscareTrigger : MonoBehaviour
     public GameObject jumpscare;
     public Collider2D damien;
     public float jumpscareDuration;
+    public AudioSource jumpscareSound;
+    public bool cultMember;
+    private string menuScene = "Menu";
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +31,9 @@ public class JumpscareTrigger : MonoBehaviour
             {
                 triggered = true;
                 Time.timeScale = 0;
+                jumpscareSound.Play();
                 StartCoroutine(ShowJumpscare());
-
+                
             }
         }
     }
@@ -37,7 +42,14 @@ public class JumpscareTrigger : MonoBehaviour
     {
         jumpscare.SetActive(true);
         yield return new WaitForSecondsRealtime(jumpscareDuration);
-        jumpscare.SetActive(false);
+        if(!cultMember)
+        {
+            jumpscare.SetActive(false);
+        }
         Time.timeScale = 1;
+        if(cultMember)
+        {   
+            SceneManager.LoadScene(menuScene);
+        }
     }
 }
