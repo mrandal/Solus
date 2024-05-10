@@ -8,6 +8,7 @@ public class EnemySword : MonoBehaviour
     public float KnockbackForce;
     public Rigidbody2D rb;
     public Collider2D sword;
+    public Collider2D otherEnemy;
     public GameObject spawn;
     public bool drop;
 
@@ -31,6 +32,12 @@ public class EnemySword : MonoBehaviour
         {
             Vector2 direction = transform.position - other.transform.position;
             Vector2 knockback = direction.normalized * KnockbackForce;
+            rb.AddForce(knockback, ForceMode2D.Impulse);
+        }
+        if(other == otherEnemy)
+        {
+            Vector2 direction = transform.position - other.transform.position;
+            Vector2 knockback = direction.normalized * KnockbackForce/2;
             rb.AddForce(knockback, ForceMode2D.Impulse);
         }
     }

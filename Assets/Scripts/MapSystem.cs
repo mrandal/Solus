@@ -12,6 +12,11 @@ public class MapSystem : MonoBehaviour
     public GameObject map2Object;
     public GameObject map3Object;
     public AudioSource sound;
+    public GameObject nataliaDeadDialogue;
+    public GameObject charlesDeadDialogue;
+    private bool spawned = false;
+    public GameObject bothDeadDialogue;
+    public AudioSource CarDriveSound;
     bool map3On = false;
     private bool justDown = true;
     // Start is called before the first frame update

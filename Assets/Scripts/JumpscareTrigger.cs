@@ -42,7 +42,10 @@ public class JumpscareTrigger : MonoBehaviour
     {
         jumpscare.SetActive(true);
         yield return new WaitForSecondsRealtime(jumpscareDuration);
-        jumpscare.SetActive(false);
+        if(!cultMember)
+        {
+            jumpscare.SetActive(false);
+        }
         Time.timeScale = 1;
         if(cultMember)
         {   
